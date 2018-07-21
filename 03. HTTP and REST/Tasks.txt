@@ -1,0 +1,322 @@
+01.GitHub Repos for User "testnakov" 
+Get
+https://api.github.com/users/testnakov/repos
+
+result:
+[
+    {
+        "id": 73502401,
+        "node_id": "MDEwOlJlcG9zaXRvcnk3MzUwMjQwMQ==", // for judge remove this ;)
+        "name": "Flappy-Nakov",
+        "full_name": "testnakov/Flappy-Nakov",
+        "owner": {
+            "login": "testnakov",
+            "id": 23406465,
+            "node_id": "MDQ6VXNlcjIzNDA2NDY1",
+            "avatar_url": "https://avatars1.githubusercontent.com/u/23406465?v=4",
+            "gravatar_id": "",
+            "url": "https://api.github.com/users/testnakov",
+            "html_url": "https://github.com/testnakov",
+            "followers_url": "https://api.github.com
+			...
+
+---------------
+02.GitHub: Labels Issue#1 (testnakov/test-nakov-repo) 
+GET
+https://api.github.com/repos/testnakov/test-nakov-repo/issues/1/labels
+
+result:
+[
+    {
+        "id": 479839740,
+        "node_id": "MDU6TGFiZWw0Nzk4Mzk3NDA=", // for judge remove this ;)
+        "url": "https://api.github.com/repos/testnakov/test-nakov-repo/labels/question",
+        "name": "question",
+        "color": "cc317c",
+        "default": true
+    },
+    {
+        "id": 479891966,
+        "node_id": "MDU6TGFiZWw0Nzk4OTE5NjY=", // for judge remove this ;)
+        "url": "https://api.github.com/repos/testnakov/test-nakov-repo/labels/sofia",
+        "name": "sofia",
+        "color": "fbca04",
+        "default": false
+    },
+    {
+        "id": 479892079,
+        "node_id": "MDU6TGFiZWw0Nzk4OTIwNzk=", // for judge remove this ;)
+        "url": "https://api.github.com/repos/testnakov/test-nakov-repo/labels/varna",
+        "name": "varna",
+        "color": "1d76db",
+        "default": false
+    }
+]
+
+---------------
+03.GitHub: Create Issue
+POST
+https://api.github.com/repos/testnakov/test-nakov-repo/issues 
+Body JSON(application/json):
+{
+	"title":"I have create an issue",
+	"body":"Minor bug",
+	"labels":["bug","minor"]
+}
+
+result:
+{
+    "url": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/677",
+    "repository_url": "https://api.github.com/repos/testnakov/test-nakov-repo",
+    "labels_url": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/677/labels{/name}",
+    "comments_url": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/677/comments",
+    "events_url": "https://api.github.com/repos/testnakov/test-nakov-repo/issues/677/events",
+    "html_url": "https://github.com/testnakov/test-nakov-repo/issues/677",
+    "id": 343107228,
+    "node_id": "MDU6SXNzdWUzNDMxMDcyMjg=",
+    "number": 677,
+    "title": "I have create an issue",
+    "user": {
+        "login": "dimitar-v",
+        "id": 37151550,
+        "node_id": "MDQ6VXNlcjM3MTUxNTUw",
+        "avatar_url": "https://avatars0.githubusercontent.com/u/37151550?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/dimitar-v",
+        "html_url": "https://github.com/dimitar-v",
+        "followers_url": "https://api.github.com/users/dimitar-v/followers",
+        "following_url": "https://api.github.com/users/dimitar-v/following{/other_user}",
+        "gists_url": "https://api.github.com/users/dimitar-v/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/dimitar-v/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/dimitar-v/subscriptions",
+        "organizations_url": "https://api.github.com/users/dimitar-v/orgs",
+        "repos_url": "https://api.github.com/users/dimitar-v/repos",
+        "events_url": "https://api.github.com/users/dimitar-v/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/dimitar-v/received_events",
+        "type": "User",
+        "site_admin": false
+    },
+    "labels": [],
+    "state": "open",
+    "locked": false,
+    "assignee": null,
+    "assignees": [],
+    "milestone": null,
+    "comments": 0,
+    "created_at": "2018-07-20T13:26:47Z",
+    "updated_at": "2018-07-20T13:26:47Z",
+    "closed_at": null,
+    "author_association": "NONE",
+    "body": "Minor bug",
+    "closed_by": null
+}
+
+---------------
+04.Firebase: All Books 
+GET
+https://testapp-a1.firebaseio.com/.json
+
+result:
+{
+    "Books": [
+        null,
+        {
+            "author": "Ivan Vazov",
+            "title": "Under the Yoke"
+        },
+        {
+            "author": "Svetlin Nakov & Co",
+            "title": "C# Fundamentals"
+        }
+    ]
+}
+
+---------------
+05.Firebase: Get Book #1 
+GET
+https://testapp-a1.firebaseio.com/Books/1.json
+
+result:
+{
+    "author": "Ivan Vazov",
+    "title": "Under the Yoke"
+}
+
+---------------
+06.Firebase: Create Book 
+POST
+https://testapp-a1.firebaseio.com/Books/.json
+Body:
+{
+  "title":"New Title",
+  "author":"New Author"
+}
+
+result:
+{
+    "name": "-LHs2FJWSmRgVV6D5Cax"
+}
+
+---------------
+07.Firebase: Patch Book #7 
+PATCH
+https://testapp-a1.firebaseio.com/Books/7.json
+Body:
+{
+  "year": 1981,
+  "author": "Author Changed"
+}
+
+result:
+{
+    "year": 1981,
+    "author": "Author Changed"
+}
+---------------
+08.Firebase: Change Book #7 Author 
+PUT
+https://testapp-a1.firebaseio.com/Books/7/author/.json
+Body:
+"New author was assigned"
+
+result:
+"New author was assigned"
+---------------
+09.Kinvey: Handshake 
+GET
+https://baas.kinvey.com/appdata/kid_SyeDZO1NX
+
+result:
+{
+    "version": "3.9.72",
+    "kinvey": "hello MyApp",
+    "appName": "MyApp",
+    "environmentName": "Development"
+}
+
+---------------
+10.Kinvey: All Posts 
+GET
+https://baas.kinvey.com/appdata/kid_SyeDZO1NX/posts
+
+result:
+[
+    {
+        "_id": "5b51f4647f20c939e4b10148",
+        "body": "First Post Body",
+        "title": "First Post Title",
+        "_acl": {
+            "creator": "kid_SyeDZO1NX"
+        },
+        "_kmd": {
+            "lmt": "2018-07-20T14:40:36.342Z",
+            "ect": "2018-07-20T14:40:36.342Z"
+        }
+    },
+    {
+        "_id": "5b51f4800beb7505a6b44c6d",
+        "body": "Second Post Body",
+        "title": "Second Post Title",
+        "_acl": {
+            "creator": "kid_SyeDZO1NX"
+        },
+        "_kmd": {
+            "lmt": "2018-07-20T14:41:04.513Z",
+            "ect": "2018-07-20T14:41:04.513Z"
+        }
+    },
+    {
+        "_id": "5b51f4a5349cfe05a1d81da9",
+        "title": "Third Second Post",
+        "body": "Third Post Body",
+        "_acl": {
+            "creator": "kid_SyeDZO1NX"
+        },
+        "_kmd": {
+            "lmt": "2018-07-20T14:41:41.520Z",
+            "ect": "2018-07-20T14:41:41.520Z"
+        }
+    }
+]
+---------------
+11.Kinvey: Create New Post 
+POST
+https://baas.kinvey.com/appdata/kid_SyeDZO1NX/posts
+Body:
+x-www-...
+
+result:
+{
+    "title": "New Title",
+    "body": "New Post Body",
+    "_acl": {
+        "creator": "5b51f23e0beb7505a6b44468"
+    },
+    "_kmd": {
+        "lmt": "2018-07-20T14:48:00.441Z",
+        "ect": "2018-07-20T14:48:00.441Z"
+    },
+    "_id": "5b51f620d996115fb6a63592"
+}
+
+---------------
+12.Kinvey: Delete a Post 
+DELETE
+https://baas.kinvey.com/appdata/kid_SyeDZO1NX/posts/5b51f620d996115fb6a63592
+
+result:
+{
+    "count": 1
+}
+
+---------------
+13.Kinvey: Edit a Post 
+PUT
+https://baas.kinvey.com/appdata/kid_SyeDZO1NX/posts/5b51f7e5bd5eaf2e6d6d94dc
+
+result:
+{
+    "title": "edited title",
+    "body": "edited author",
+    "hidden": "true",
+    "_id": "5b51f7e5bd5eaf2e6d6d94dc",
+    "_acl": {
+        "creator": "5b51f23e0beb7505a6b44468"
+    },
+    "_kmd": {
+        "lmt": "2018-07-20T14:57:53.560Z",
+        "ect": "2018-07-20T14:55:33.574Z"
+    }
+}
+
+---------------
+14.Kinvey: Login 
+POST
+https://baas.kinvey.com/user/kid_SyeDZO1NX/login
+Body:
+{
+	"username":"guest",
+	"password":"guest"
+}
+
+result:
+{
+    "_id": "5b51f23e0beb7505a6b44468",
+    "username": "guest",
+    "_kmd": {
+        "lmt": "2018-07-20T14:31:26.556Z",
+        "ect": "2018-07-20T14:31:26.556Z",
+        "authtoken": "963297e5-be41-4416-8281-a6ec4ee2e08f.KMh7F3MD5vhtSKzxRpD4Lo6CuvxrjYIkGoOX3P/cKyM="
+    },
+    "_acl": {
+        "creator": "5b51f23e0beb7505a6b44468"
+    }
+}
+
+---------------
+15.Bonus Kinvey: Logout
+POST
+https://baas.kinvey.com/user/kid_SyeDZO1NX/_logout
+Headers:
+Authorization 
+Kinvey {authtoken}
