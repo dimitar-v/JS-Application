@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub Repos</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+GitHub username:
+<input type="text" id="username" value="k1r1L" />
+<button onclick="loadRepos()">Load Repos</button>
+<ul id="repos">
+    <li>
+        <a href="{repo.html_url}">
+            {repo.full_name}
+        </a>
+    </li>
+</ul>
+<script>
+    (function(){
+        $('#username').val('');
+        $('#repos').empty();
+    })();
+    function loadRepos() {
+        let username = $('#username').val();
+        let results = $('#repos');
+        results.empty();
+
+        // version 1: the judge does not accept it
+        // $.get('https://api.github.com/users/' + username + '/repos')
+        //     .then(showData)
+        //     .catch(showError);
+
+        // version 2
+        $.ajax({
+            url:'https://api.github.com/users/' + username + '/repos',
+            success: showData,
+            error: showError
+        });
+
+        function showData(repos) {
+            for (const repo of repos) {
+                results.append($('<li>')
+                    .append($('<a>')
+                        .text(repo.full_name)
+                        .attr('href',repo.html_url)
+                    ));
+            }
+        }
+        
+        function showError() {
+            results.append($('<li>Error!</li>'));
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XmlHttpRequest Example</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<button onclick="loadRepos()">Load Repos</button>
+<div id="res"></div>
+<script>
+    function loadRepos() {
+        let request = new XMLHttpRequest();
+        let container = $('#res');
+        request.onreadystatechange = function () {
+            if(request.readyState === 4 && request.status === 200){
+                container.text(request.responseText);
+            }
+        };
+        request.open('GET', 'https://api.github.com/users/testnakov/repos', true);
+        request.send();
+    }
+</script>
+</body>
+</html>
