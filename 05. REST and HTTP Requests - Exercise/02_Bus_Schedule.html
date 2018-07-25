@@ -55,6 +55,9 @@
         }
 
         function displayError(err) {
+            btnDepart.attr('disabled', true);
+            btnArrive.attr('disabled', true);
+
             info.text('Error');
             console.log(err);
         }
