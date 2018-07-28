@@ -11,27 +11,27 @@ function attachEvents() {
         createRequest('', 'GET')
             .then(showCatches)
             .catch(showError);
-    }
 
-    function showCatches(catches) {
-        result.empty();
-        for (const c of catches) {
-            $(`<div class="catch" data-id="${c._id}">`)
-                .append($(`<label>Angler</label>`))
-                .append($(`<input type="text" class="angler" value="${c.angler}"/>`))
-                .append($(`<label>Weight</label>`))
-                .append($(`<input type="number" class="weight" value="${c.weight}"/>`))
-                .append($(`<label>Species</label>`))
-                .append($(`<input type="text" class="species" value="${c.species}"/>`))
-                .append($(`<label>Location</label>`))
-                .append($(`<input type="text" class="location" value="${c.location}"/>`))
-                .append($(`<label>Bait</label>`))
-                .append($(`<input type="text" class="bait" value="${c.bait}"/>`))
-                .append($(`<label>Capture Time</label>`))
-                .append($(`<input type="number" class="captureTime" value="${c.captureTime}"/>`))
-                .append($(`<button>`).attr('class', 'update').text('Update').on('click', updateCatch))
-                .append($(`<button>`).attr('class', 'delete').text('Delete').on('click', () => deleteCatch(c._id)))
-                .appendTo(result);
+        function showCatches(catches) {
+            result.empty();
+            for (const c of catches) {
+                $(`<div class="catch" data-id="${c._id}">`)
+                    .append($(`<label>Angler</label>`))
+                    .append($(`<input type="text" class="angler" value="${c.angler}"/>`))
+                    .append($(`<label>Weight</label>`))
+                    .append($(`<input type="number" class="weight" value="${c.weight}"/>`))
+                    .append($(`<label>Species</label>`))
+                    .append($(`<input type="text" class="species" value="${c.species}"/>`))
+                    .append($(`<label>Location</label>`))
+                    .append($(`<input type="text" class="location" value="${c.location}"/>`))
+                    .append($(`<label>Bait</label>`))
+                    .append($(`<input type="text" class="bait" value="${c.bait}"/>`))
+                    .append($(`<label>Capture Time</label>`))
+                    .append($(`<input type="number" class="captureTime" value="${c.captureTime}"/>`))
+                    .append($(`<button>`).attr('class', 'update').text('Update').on('click', updateCatch))
+                    .append($(`<button>`).attr('class', 'delete').text('Delete').on('click', () => deleteCatch(c._id)))
+                    .appendTo(result);
+            }
         }
     }
 
@@ -77,6 +77,6 @@ function attachEvents() {
     }
 
     function showError(error) {
-        console.log(error); // TODO: ...
+        console.log(error);
     }
 }
