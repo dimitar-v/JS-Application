@@ -83,8 +83,8 @@ table td {
     margin: 1em;
     display: none;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 5%;
+    left: 15%;
 	text-align: center;
 	border-radius: 3px;
 }
