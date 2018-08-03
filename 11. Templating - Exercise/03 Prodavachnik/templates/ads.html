@@ -1,0 +1,15 @@
+{{#each ads}}
+    <div class="ad-box" data-ad-id="{{_id}}">
+        <div class="ad-title">{{title}}
+            {{#if owner}}
+            <button class="ad-control delete">✖</button>
+            <button class="ad-control edit">✎</button>
+            {{/if}}
+            <button class="ad-control view">☰</button>
+        </div>
+        <div><img src="{{imageUrl}}"></div>
+        <div>Price {{price}} | by {{publisher}}</div>
+    </div>
+{{else}}
+    <p>No advertisements available.</p>
+{{/each}}
