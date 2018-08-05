@@ -32,14 +32,14 @@ $(() => {
 
     function showList() {
         listContacts.html(templates.list(context));
-        attachHendlers();
+        attachHandlers();
     }
     
     function showDetails(index) {
         listDetails.html(templates.details(context.contacts[index]));
     }
     
-    function attachHendlers() {
+    function attachHandlers() {
         $('.content').on('click', (e) => {
             let index = $(e.target).closest('.contact').attr('data-index');
             context.contacts.forEach(c => c.active = false); //add active functionality
