@@ -1,0 +1,5 @@
+{{#each contacts}}
+    {{> contact}}
+{{else}}
+    <div class="contact"><i>No contacts</i></div>
+{{/each}}
