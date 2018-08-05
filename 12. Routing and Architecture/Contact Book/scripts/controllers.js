@@ -13,6 +13,7 @@ handlers.contacts = function (ctx) {
         ctx.partials = this.partials;
         ctx.partial('./templates/contacts.hbr');
     });
+    //
     // this.bind();
     // $('.contact').click(function () {
     //     console.log('click');
