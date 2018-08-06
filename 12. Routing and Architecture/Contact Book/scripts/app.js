@@ -28,7 +28,13 @@ $(() => {
             });
         });
 
-        this.get('#/contacts', handlers.contacts);
+        this.get('#/contacts', (ctx) => {
+            handlers.contacts(ctx);
+            this.bind('click contact', function () {
+                let index = $(this.target).closest('.contact').attr('data-id');
+                handlers.contacts(ctx, index);
+            })
+        });
 
         this.get('#/profile', function () {
             console.log('Edit profile form');
@@ -69,7 +75,7 @@ $(() => {
                 return console.log('Repeat Password is different!');
 
             auth.register(username, password)
-                .then(this.redirect('#/contacts'));
+                .then(this.redirect('#/contacts/:-1'));
         });
 
         this.post('#/profile', function () {
