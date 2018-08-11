@@ -131,20 +131,7 @@ appController.flightDetails = function ()  {
             flight.isAuthor = this.user === flight.author;
             this.flight = flight;
             this.loadPartials(getPartials('viewFlightDetails'))
-                .then(function () {
-                    this.partial('./templates/common/main.hbs')
-                    // .then(() => { // delete comment
-                    //     $('a[data-comment-id]').click(function (event) {
-                    //         event.preventDefault();
-                    //         let link = $(this);
-                    //         sendRequest.del('appdata', 'comments/' + link.attr('data-comment-id'))
-                    //             .then(() => {
-                    //                 notifications.showInfo('Comment deleted.');
-                    //                 link.parent().parent().remove();
-                    //             }).catch(notifications.handleAjaxError);
-                    // });
-                    // });
-                });
+                .then(function () {this.partial('./templates/common/main.hbs')});
         }).catch(notifications.handleAjaxError);
 };
 
